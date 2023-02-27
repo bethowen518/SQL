@@ -1,0 +1,32 @@
+--Create a shoe store database
+
+CREATE TABLE FabShoes 
+(ID INTEGER PRIMARY KEY, Item TEXT, Price INTEGER, Color TEXT, Size INTEGER, quantity INTEGER);
+
+INSERT INTO FabShoes VALUES
+(1, "Shoe1", 99, "Red", 7.5, 25),
+(2, "Shoe2", 85, "Brown", 8, 3),
+(3, "Shoe3", 47, "Black", 5.5, 10),
+(4, "Shoe4", 35, "Sparkle", 6, 12),
+(5, "Shoe5", 75, "Camel", 7, 40),
+(6, "Shoe6", 44, "Orange", 10, 11),
+(7, "Shoe7", 100, "Yellow", 8, 1),
+(8, "Shoe8", 30, "Silver Glitter", 7.5, 93),
+(9, "Shoe9", 19, "Navy", 9, 20),
+(10, "Shoe10", 21, "Lilac", 10.5, 5),
+(11, "Shoe11", 125, "Gold", 4, 9),
+(12, "Shoe12", 64, "Purple", 13, 19),
+(13, "Shoe 13", 49, "Green", 75, 30),
+(14, "Shoe14", 25, "Polka Dot", 8.5, 4),
+(15, "Shoe15", 33, "Rainbow", 7.5, 16);
+
+--display available inventory ordered by price
+SELECT item, quantity, price
+FROM FabShoes
+ORDER BY price;
+
+--what is the total amount of shoes available? what amount is expected to be made on current inventory? what is our average price of inventory?
+SELECT SUM(quantity) "Inventory Quantity",
+SUM(price)"Total Price",
+AVG(price) "Average Price"
+FROM FabShoes;
